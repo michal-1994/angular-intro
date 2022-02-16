@@ -9,6 +9,8 @@
         <app-warning-alert></app-warning-alert>
         <app-success-alert></app-success-alert>
 
+        <hr>
+
         <h3>Second task</h3>
 
         <input type="text" class="form-control" [(ngModel)]="username">
@@ -18,6 +20,37 @@
           [disabled]="!username"
           (click)="username = ''"
         >Reset User</button>
+
+        <hr>
+
+        <h3>Third task</h3>
+
+        <!-- <button
+          class="btn btn-primary"
+          (click)="showSecret = !showSecret"
+        >Display Details</button>
+
+        <br>
+
+        <p *ngIf="showSecret">Secret Password = tuna</p>
+
+        <br> -->
+
+        <button
+          class="btn btn-primary"
+          (click)="onToggleDetails()"
+        >Display Details</button>
+
+        <br>
+
+        <p *ngIf="showSecret">Secret Password = tuna</p>
+
+        <div
+          *ngFor="let logItem of log"
+          [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+          [ngClass]="{ 'white-text': logItem >= 5 }"
+        >{{ logItem }}</div>
+
       </div>
     </div>
   </div>
