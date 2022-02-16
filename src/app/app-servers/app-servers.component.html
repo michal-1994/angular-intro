@@ -1,10 +1,16 @@
-<label for="">Server name: {{ serverName }}</label>
-<input
+<label>Server name</label>
+<!-- <input
     type="text"
     class="form-control"
     (input)="onUpdateServerName($event)"
->
+> -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+/>
 
+<!-- <p>Server name: {{ serverName }}</p> -->
 
 <br>
 
@@ -24,7 +30,6 @@
 <p [innerText]="allowNewServer"></p>
 <p>{{ allowNewServer }}</p>
 <p>{{ serverCreationStatus }}</p>
-
 
 <app-server></app-server>
 <app-server></app-server>
